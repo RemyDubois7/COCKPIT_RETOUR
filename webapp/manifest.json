@@ -1,0 +1,132 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "CMR.ZEWM_MERCH_RETURN",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "sourceTemplate": {
+            "id": "servicecatalog.connectivityComponentForManifest",
+            "version": "0.0.0"
+        },
+        "dataSources": {
+            "ZRETOUR_MERCHANDISE_SRV": {
+                "uri": "/sap/opu/odata/sap/ZRETOUR_MERCHANDISE_SRV",
+                "type": "OData",
+                "settings": {
+                    "localUri": "localService/ZRETOUR_MERCHANDISE_SRV/metadata.xml",
+                    "annotations": [
+                        "localAnnotations"
+                    ],
+                    "odataVersion": "4.0"
+                }
+            },
+            "localAnnotations": {
+                "uri": "data/annotations.xml",
+                "type": "ODataAnnotation"
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "config": {
+            "fullWidth": true
+        },
+        "rootView": {
+            "viewName": "CMR.ZEWM_MERCH_RETURN.view.Main",
+            "type": "XML",
+            "async": true,
+            "id": "Main"
+        },
+        "dependencies": {
+            "minUI5Version": "1.65.6",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "CMR.ZEWM_MERCH_RETURN.i18n.i18n"
+                }
+            },
+            "": {
+                "type": "sap.ui.model.odata.v2.ODataModel",
+                "settings": {
+                    "defaultOperationMode": "Server",
+                    "defaultBindingMode": "OneWay",
+                    "defaultCountMode": "Request"
+                },
+                "dataSource": "ZRETOUR_MERCHANDISE_SRV",
+                "preload": true
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "CMR.ZEWM_MERCH_RETURN.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "TargetMain",
+                    "pattern": "RouteMain",
+                    "target": [
+                        "TargetMain"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMain": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "Main",
+                    "viewName": "Main"
+                }
+            }
+        }
+    },
+    "sap.platform.abap": {
+        "uri": "/sap/bc/ui5_ui5/sap/zewm_merchretur/webapp",
+        "_version": "1.1.0"
+    }
+}

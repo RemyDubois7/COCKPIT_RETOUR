@@ -1,0 +1,26 @@
+{
+  "name": "zewm_merch_return",
+  "version": "0.0.1",
+  "description": "Cockpit Return Merchendise",
+  "devDependencies": {
+    "@ui5/cli": "1.13.0",
+    "@sap/ui5-builder-webide-extension": "1.0.x"
+  },
+  "scripts": {
+    "build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo"
+  },
+  "ui5": {
+    "dependencies": [
+      "@sap/ui5-builder-webide-extension"
+    ]
+  },
+  "private": "true",
+  "main": "serviceBinding.js",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sap/approuter": "^10.1.0",
+    "@sap/html5-repo-mock": "^2.0.1",
+    "array-unique": "^0.3.2"
+  }
+}

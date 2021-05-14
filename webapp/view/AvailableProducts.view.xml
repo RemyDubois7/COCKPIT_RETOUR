@@ -1,0 +1,23 @@
+<mvc:View controllerName="CMR.ZEWM_MERCH_RETURN.controller.AvailableProducts" xmlns:dnd="sap.ui.core.dnd" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:c="sap.ui.core" displayBlock="true" xmlns="sap.m" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" height="50%">
+	<smartFilterBar:SmartFilterBar id="smartFilterBar" persistencyKey="SmartFilter_Explored" entitySet="HeaderSet"
+		basicSearchFieldName="Product" enableBasicSearch="true">
+		<smartFilterBar:controlConfiguration>
+			<smartFilterBar:ControlConfiguration key="Product" index="1" visibleInAdvancedArea="true"/>
+			<smartFilterBar:ControlConfiguration key="Hu" index="2" visibleInAdvancedArea="true"/>
+			<smartFilterBar:ControlConfiguration key="Bin" index="3" visibleInAdvancedArea="true"/>
+		    <smartFilterBar:ControlConfiguration key="Supplier" index="4" visibleInAdvancedArea="true"/>
+		</smartFilterBar:controlConfiguration>
+		<smartFilterBar:layoutData>
+			<FlexItemData shrinkFactor="0"/>
+		</smartFilterBar:layoutData>
+	</smartFilterBar:SmartFilterBar>
+	<smartTable:SmartTable id="Table" visible="true" entitySet="HeaderSet" tableType="Table" header="Header" smartFilterId="smartFilterBar"
+		useExportToExcel="true" beforeExport="onBeforeExport" useVariantManagement="true" useTablePersonalisation="true" showRowCount="true"
+		persistencyKey="SmartTableAnalytical_Explored" enableAutoBinding="true" initiallyVisibleFields="Product,Hu,Bin,Quantity,Unit,Price">
+		<smartTable:layoutData>
+			<FlexItemData growFactor="1" baseSize="0%"/>
+		</smartTable:layoutData>
+	</smartTable:SmartTable>
+</mvc:View>

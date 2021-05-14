@@ -1,0 +1,18 @@
+{
+"welcomeFile": "/index.html",
+"authenticationMethod": "none",
+"routes":
+[
+{
+"authenticationType": "none",
+"csrfProtection": false,
+"source": "^/sap/opu/odata/",
+"destination": "DF3-020"
+},
+{
+"source": "^(.*)$",
+"target": "$1",
+"service": "html5-apps-repo-rt"
+}
+]
+}
